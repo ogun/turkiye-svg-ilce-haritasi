@@ -22,3 +22,8 @@ https://mapshaper.org/
 SVG dosyasıyla ilgili tanımlamaları öğrenmemizi sağlar.
 
 https://developer.mozilla.org/en-US/docs/Web/SVG
+
+### Türkiye Mülki İdare Bölümleri Envanteri
+İl ve ilçe isimleri için resmi kaynak.
+
+https://www.e-icisleri.gov.tr/Anasayfa/MulkiIdariBolumleri.aspx
