@@ -4182,9 +4182,10 @@
 			'mouseover',
 			function (event) {
 			  if (event.target.tagName === 'path') {
+				var sehir = event.target.parentNode.getAttribute("id").split("-")[0];
 				info.innerHTML = [
 				  '<div>',
-				  event.target.previousElementSibling.innerHTML,
+				  event.target.previousElementSibling.innerHTML+' ('+sehir+')',
 				  '</div>'
 				].join('');
 			  }
