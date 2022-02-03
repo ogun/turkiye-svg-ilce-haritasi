@@ -9,6 +9,16 @@
     <!-- SVG Türkiye Haritası -->
     <link href="svg-turkiye-haritasi.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+	<script type="text/javascript" src="turkey.json"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap4.min.js"></script>
+	<style>
+	.row{
+		margin:0px!important;
+	}
+	</style>
   </head>
   <body>
     <!-- SVG Türkiye Haritası | MIT Lisans | dnomak.com -->
@@ -20,7 +30,7 @@
     <div class="svg-turkiye-haritasi">
 	
 
-<svg version="1.1" id="svg-turkiye-haritasi" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2000 2000" xml:space="preserve">
+<svg version="1.1" id="svg-turkiye-haritasi" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2000 300" xml:space="preserve">
 
 
     <g class="ulke" id="turkiye">
@@ -4171,10 +4181,36 @@
   
 </svg>
 
+<div class="row">
+	<div class="col-md-12">
+		<table id="sehirbilgi" class="display">
+			<thead>
+			<tr>
+				<th>Şehir</th>
+				<th>İlçe</th>
+				<th>Belde</th>
+				<th>Köy</th>
+				<th>Mahalle</th>
+				<th>İşlem</th>
+			</tr>
+			</thead>
+			<tbody>
+			
+			</tbody>
+		</table>
+	</div>
+</div>
+
     <script>
-	//event.target.parentNode.firstChild.innerHTML,
-      svgturkiyeharitasi();
-	  function svgturkiyeharitasi() {
+		var t;
+		$(document).ready(function() {
+			t = $('#sehirbilgi').DataTable();
+		} );
+	
+	function ready() {
+	
+		svgturkiyeharitasi();
+		function svgturkiyeharitasi() {
 		  const element = document.querySelector('#svg-turkiye-haritasi');
 		  const info = document.querySelector('.il-isimleri');
 
@@ -4182,10 +4218,15 @@
 			'mouseover',
 			function (event) {
 			  if (event.target.tagName === 'path') {
+				
 				var sehir = event.target.parentNode.getAttribute("id").split("-")[0];
+				var ilcesi = event.target.previousElementSibling.innerHTML;
+				
+				
+				
 				info.innerHTML = [
 				  '<div>',
-				  event.target.previousElementSibling.innerHTML+' ('+sehir+')',
+				  ilcesi+' ('+sehir+')',
 				  '</div>'
 				].join('');
 			  }
@@ -4214,10 +4255,29 @@
 				const parent = event.target.parentNode;
 				const id = parent.getAttribute('id');
 
-				if (
-				  id === 'guney-kibris'
-				) {
-				  return;
+				var sehir = event.target.parentNode.getAttribute("id").split("-")[0];
+				var ilcesi = event.target.previousElementSibling.innerHTML;
+				//Şehir bilgilerini listele
+				//document.getElementById("sehirbilgi").innerHTML="";
+				$('#sehirbilgi').dataTable().fnClearTable();
+				
+				
+				tr.tr.forEach(ara);
+				function ara(item, index) {
+				  if(sehir == item.ilkod && ilcesi==item.ilce){
+					//console.log(item.il+" "+item.ilce+" "+item.mah);
+					//document.getElementById("sehirbilgi").innerHTML +=  item.il+" / "+item.ilce+" / "+item.mah+"<br>";
+					t.row.add( [
+						item.il,
+						item.ilce,
+						item.koy,
+						item.belde,
+						item.mah,
+						""
+					] ).draw( false );
+					
+					//document.getElementById("sehirbilgi").innerHTML +=  '<div class="row"><div class="col-md-2">'+item.il+'</div> <div class="col-md-2">'++'</div> <div class="col-md-2">'++'</div> <div class="col-md-2">'++'</div> <div class="col-md-2">'++'</div></div> ';
+				  }				  
 				}
 
 				window.location.href = (
@@ -4230,6 +4290,9 @@
 			}
 		  );
 		}
+		
+	}
+	document.addEventListener("DOMContentLoaded", ready);
     </script>
   </body>
 </html>
