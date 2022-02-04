@@ -27,3 +27,13 @@ https://developer.mozilla.org/en-US/docs/Web/SVG
 İl ve ilçe isimleri için resmi kaynak.
 
 https://www.e-icisleri.gov.tr/Anasayfa/MulkiIdariBolumleri.aspx
+
+### Güncellemeler
+2022 Şubat ayında Türkiye Mülki İdare Bölümleri Envanterinden il, ilçe, köy, belde ve mahalle bilgileri çekilerek haritaya işlenmiştir. İlçeye tıkladığınızda ilçede bulunan tüm mahalle köy ve beldeler tablo şeklinde listelenmektedir. HTML sayfa olarak hazırlanan etkileşimli harita bootstrap, jquery ve datatables scripleri ile birlikte hazırlanmıştır. Mahalle köy veya belde sınırlarının her ilçede var olup olmadığını bilemediğim için haritada ayrı olarak gösterilmemektedir. Bu sınırlar Trabzon için bulup githuba koydum, isteyen bu https://github.com/matasoy/Trabzon-Svg adresten inceleyebilir.
+
+### Nerede Kullanılır
+🟩 Ülke içinde yapılacak ve konumların önemli olduğu derlem çalışmalarında 
+🟩 Araç takip sistemlerinde
+🟩 İstatistiki veriler oluşturmak istendiğinde
+
+Kaynakları paylaştığı için https://github.com/ogun'a teşekkürler.
