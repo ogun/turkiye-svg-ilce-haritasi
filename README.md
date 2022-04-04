@@ -4,6 +4,7 @@ Türkiye'nin tüm ilçelerine ait bir SVG haritasının olmaması ve olanların 
 ## Harita
 Herhangi bir yanlışı GitHub üzerinden bildirebilir ve düzeltilmesi için katkıda bulunabilirsiniz.
 
+<img src="https://github.com/matasoy/turkiye-svg-ilce-haritasi/blob/master/turkiye.gif">
 <img src="https://raw.githubusercontent.com/ogun/turkiye-svg-ilce-haritasi/master/turkiye-ilceler.svg?sanitize=true">
 
 ## Kullanılan Kaynaklar
