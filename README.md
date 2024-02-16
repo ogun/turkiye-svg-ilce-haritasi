@@ -8,8 +8,11 @@ Herhangi bir yanlışı GitHub üzerinden bildirebilir ve düzeltilmesi için ka
 
 ## Kullanılan Kaynaklar
 
+### Wikipedia
+User: [Chumwa](https://commons.wikimedia.org/wiki/User:Chumwa), File: [Map of the administrative divisions of Turkey.svg](https://commons.wikimedia.org/wiki/File:Map_of_the_administrative_divisions_of_Turkey.svg)
+
 ### GADM
-GADM, tüm ülkeler ve alt bölümleri için haritalar ve mekansal veriler sağlar. 
+GADM, tüm ülkeler ve alt bölümleri için haritalar ve mekansal veriler sağlar.
 
 https://gadm.org/download_country_v3.html
 
